@@ -16,14 +16,28 @@ public class Alumno {
     public void setNombre(String nombre){
         Nombre=nombre;
     }
-    public void setApellido(String apelldio){
-        Apellido=apelldio;
+    public void setApellido(String apellido){
+        Apellido=apellido;
+    }
+    public String getNombre(){//este método se creó pensando en su utilización a la hora de editar, el usuario ingresa un carnet y una nueva ventana aparece con dos textfields y tendremos que poner el nombre en el primer textfield
+        
+        
+        return Nombre;
+    }
+    public String getApellido(){//método creado con el mismo fin del método getNombre
+        return Apellido;
     }
     public String getDatos(){
-        return Nombre + "" + Apellido + "" + Carnet;
+        return Nombre + " " + Apellido + " " + Carnet;
     }
     public String getCarnet(){//el siguiente método genera un carnet con las iniciales de del nombre y el apelldio seguido por los minutos que marca el sistema en ese momento mas dos números aleatorios
         
+        
+        return Carnet;
+    }
+    
+    public String GeneradorCarnet(){
+        String codigo="";
         String iniciales="" + Nombre.charAt(0)+Apellido.charAt(0);//obtención de las iniciales
         
         Calendar calendario=Calendar.getInstance();//obtención de los minutos
@@ -38,12 +52,10 @@ public class Alumno {
         else{numero="" + num2;}
         
         
-        Carnet=iniciales + minutes + numero;
-        return Carnet;
-    }
-    public String GeneradorCarnet(){
+       codigo=iniciales + minutes + numero;
         
-        String codigo="";
+        
+        
         return codigo;
     }
     
