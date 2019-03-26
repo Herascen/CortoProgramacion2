@@ -13,9 +13,15 @@ public class ManejadorAlumnos {
       return ArrayAlumno;
   }  
   public void IngresarAlumno(String nombre, String apellido){//asignará los datos a un alumno al llamar al método constructor y luego lo agregará al array de alumnos
-      
+      ArrayAlumno.add(new Alumno(nombre, apellido));
   }
-  public void BuscarAlumno(String carnet){//devolverá los datos del alumno 
+  public String  BuscarAlumno(String carnet,  int posicion){//devolverá los datos del alumno 
+      if(posicion==ArrayAlumno.size() || ArrayAlumno.get(posicion).equals(carnet)){
+          if(ArrayAlumno.get(posicion).equals(carnet)){
+          return ArrayAlumno.get(posicion).getDatos();}
+          else{return "Alumno no encontrado";}
+      }
+      else{return BuscarAlumno(carnet, posicion+1);}
       
   }
   public void EliminarAlumno(String carnet){
