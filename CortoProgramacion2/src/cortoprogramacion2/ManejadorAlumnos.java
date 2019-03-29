@@ -16,8 +16,8 @@ public class ManejadorAlumnos {
       ArrayAlumno.add(new Alumno(nombre, apellido));
   }
   public String  BuscarAlumno(String carnet,  int posicion){//devolverá los datos del alumno la posición será la posición inicial
-      if(posicion==ArrayAlumno.size() || ArrayAlumno.get(posicion).equals(carnet)){
-          if(ArrayAlumno.get(posicion).equals(carnet)){
+      if(posicion==ArrayAlumno.size() || ArrayAlumno.get(posicion).getCarnet().equals(carnet)){
+          if(ArrayAlumno.get(posicion).getCarnet().equals(carnet)){
           return ArrayAlumno.get(posicion).getDatos();}
           else{return "Alumno no encontrado";}
       }
@@ -26,7 +26,7 @@ public class ManejadorAlumnos {
   }
   public void EliminarAlumno(String carnet){
       for(int i=0; i<ArrayAlumno.size(); i++){
-          if(ArrayAlumno.get(i).getCarnet()==carnet){   ArrayAlumno.remove(i);}
+          if(ArrayAlumno.get(i).getCarnet().equals(carnet)){   ArrayAlumno.remove(i);}
           
       }
       
@@ -41,7 +41,10 @@ public class ManejadorAlumnos {
       }
       return estudent;
   }
-
+public ArrayList<Alumno> OrdenarAlumnos(ArrayList<Alumno> elarray){
+    //pendiente por el momento
+  return elarray;
+}
  
 }
 

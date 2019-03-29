@@ -30,7 +30,7 @@ public class Alumno {
     public String getDatos(){
         return Nombre + " " + Apellido + " " + Carnet;
     }
-    public String getCarnet(){//el siguiente método genera un carnet con las iniciales de del nombre y el apelldio seguido por los minutos que marca el sistema en ese momento mas dos números aleatorios
+    public String getCarnet(){//el siguiente método genera un carnet con las iniciales de del nombre y el apelldio seguido por los minutos que marca el sistema en ese momento mas dos números aleatorios...
         
         
         return Carnet;
