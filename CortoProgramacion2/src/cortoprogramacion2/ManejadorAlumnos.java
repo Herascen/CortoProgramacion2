@@ -9,7 +9,7 @@ public class ManejadorAlumnos {
         this.ArrayAlumno = new ArrayList<>();
         
     }
-  public ArrayList<Alumno> getArrayAlumno(){//devuelve el arraylist de alumnos para su uso en el JList
+  public ArrayList<Alumno> getArrayAlumno(){//devuelve el arraylist de alumnos para su uso en el método ordenar alumnos
       return ArrayAlumno;
   }  
   public void IngresarAlumno(String nombre, String apellido){//asignará los datos a un alumno al llamar al método constructor y luego lo agregará al array de alumnos
@@ -41,9 +41,11 @@ public class ManejadorAlumnos {
       }
       return estudent;
   }
-public ArrayList<Alumno> OrdenarAlumnos(ArrayList<Alumno> elarray){
-    //pendiente por el momento
-  return elarray;
+public ArrayList<String> OrdenarAlumnos(ArrayList<Alumno> elarray){//recibe el mismo arraylist de el objeto y devuelve un array ordenado alfabéticamente de los datos de los alumnos del array
+    ArrayList<String>datos=new ArrayList<>();
+    for(int i=0; i<elarray.size(); i++){
+        datos.add(elarray.get(i).getDatos());}
+  return datos;
 }
  
 }
