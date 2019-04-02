@@ -8,10 +8,12 @@ public class Alumno {
     private String Nombre;
     private String Apellido;
     private String Carnet;
-    public Alumno(String nom, String apell){
+    private String Grado;
+    public Alumno(String nom, String apell, String grado){
         Nombre=nom;
         Apellido=apell;
         Carnet=GeneradorCarnet();
+        this.Grado=grado;
     }
     public void setNombre(String nombre){
         Nombre=nombre;
@@ -28,17 +30,24 @@ public class Alumno {
         return Apellido;
     }
     public String getDatos(){
-        return Nombre + " " + Apellido + " " + Carnet;
+        Nombre=Nombre.toUpperCase().charAt(0)+Nombre.substring(1,Nombre.length()).toLowerCase();
+        Apellido=Apellido.toUpperCase().charAt(0)+Apellido.substring(1,Apellido.length()).toLowerCase();
+        return Nombre + " " + Apellido + "   " + Carnet + "   " + Grado;
     }
     public String getCarnet(){//el siguiente método genera un carnet con las iniciales de del nombre y el apelldio seguido por los minutos que marca el sistema en ese momento mas dos números aleatorios...
         
-        
+         
         return Carnet;
+       
+    }
+    public String getGrado(){
+        return Grado;
     }
     
     public String GeneradorCarnet(){
         String codigo="";
         String iniciales="" + Nombre.charAt(0)+Apellido.charAt(0);//obtención de las iniciales
+        iniciales=iniciales.toUpperCase();
         
         Calendar calendario=Calendar.getInstance();//obtención de los minutos
         int minutos=calendario.get(Calendar.MINUTE);
